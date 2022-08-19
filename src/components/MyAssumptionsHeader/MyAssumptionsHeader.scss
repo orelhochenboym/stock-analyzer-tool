@@ -1,0 +1,17 @@
+#my-assumptions-header {
+	flex-basis: calc(100% / 3);
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#my-assumptions {
+	background-color: #daa520;
+	flex-basis: 100%;
+}
+
+#low,
+#mid,
+#high {
+	background-color: #daa520;
+	flex-basis: calc(100% / 3);
+}

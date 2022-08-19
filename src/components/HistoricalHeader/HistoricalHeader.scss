@@ -1,0 +1,19 @@
+$background-color: #daa520;
+
+#historical-header {
+	flex-basis: calc(100% / 3);
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#historical {
+	background-color: $background-color;
+	flex-basis: 100%;
+}
+
+#one-year,
+#five-year,
+#ten-year {
+	background-color: $background-color;
+	flex-basis: calc(100% / 3);
+}
