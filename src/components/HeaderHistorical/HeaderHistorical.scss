@@ -1,27 +1,26 @@
 $background-color: #daa520;
 
-#historical-container,
-#historical,
-#one-year,
-#five-year,
-#ten-year {
+#historical-header-container,
+#historical-text,
+#one-year-text,
+#five-year-text,
+#ten-year-text {
 	background-color: $background-color;
 }
 
-#one-year,
-#five-year,
-#ten-year {
+#one-year-text,
+#five-year-text,
+#ten-year-text {
 	flex-basis: calc(100% / 3);
 }
 
-#historical-container {
+#historical-header-container {
 	display: flex;
 	flex-flow: row wrap;
 	flex-basis: 30%;
 }
 
-#historical {
+#historical-text {
 	flex-basis: 100%;
-	border-bottom: 2px solid white;
-	border-radius: 8px;
+	border-bottom: 1px solid white;
 }

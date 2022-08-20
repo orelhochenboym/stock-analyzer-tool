@@ -1,13 +1,14 @@
 $background-color: #daa520;
 
-#header-container {
+#row-header-container {
 	background-color: $background-color;
 	display: flex;
 	justify-content: space-evenly;
 	flex-flow: row wrap;
+	padding: 0.5rem;
 }
 
-#labels-column {
+#labels-header {
 	background-color: $background-color;
 	color: $background-color;
 	flex-basis: 30%;
