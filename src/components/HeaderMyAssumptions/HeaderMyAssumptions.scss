@@ -1,0 +1,28 @@
+$background-color: #daa520;
+
+#my-assumptions-container,
+#my-assumptions,
+#low,
+#mid,
+#high {
+	background-color: $background-color;
+}
+
+#low,
+#mid,
+#high {
+	flex-basis: calc(100% / 3);
+}
+
+#my-assumptions-container {
+	flex-basis: 30%;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+#my-assumptions {
+	flex-basis: 100%;
+	white-space: pre;
+	border-bottom: 2px solid white;
+	border-radius: 8px;
+}

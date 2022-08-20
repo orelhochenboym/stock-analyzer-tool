@@ -3,7 +3,12 @@ $background-color: #daa520;
 #header-container {
 	background-color: $background-color;
 	display: flex;
-	justify-content: flex-end;
-	flex-flow: row nowrap;
-	justify-content: flex-end;
+	justify-content: space-evenly;
+	flex-flow: row wrap;
+}
+
+#labels-column {
+	background-color: $background-color;
+	color: $background-color;
+	flex-basis: 30%;
 }
