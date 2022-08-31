@@ -1,9 +1,21 @@
 $background-color: #1e1e1e;
 
-#row-input-assumptions-container {
+#row-input-assumptions-container,
+.input-container,
+.percent,
+#low-input,
+#mid-input,
+#high-input {
 	background-color: $background-color;
+}
+
+#row-input-assumptions-container,
+.input-container {
 	display: flex;
-	justify-content: space-evenly;
+}
+
+#row-input-assumptions-container {
+	justify-content: space-around;
 	align-items: center;
 	flex-flow: row wrap;
 	flex-basis: 30%;
@@ -14,14 +26,11 @@ input:focus {
 }
 
 .input-container {
-	background-color: $background-color;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .percent {
-	background-color: $background-color;
 	width: fit-content;
 	height: fit-content;
 	position: absolute;
@@ -31,8 +40,6 @@ input:focus {
 #low-input,
 #mid-input,
 #high-input {
-	background-color: $background-color;
-	flex-basis: 30%;
 	font-size: 1rem;
 	padding: 0.35rem;
 	border: 1px solid white;
