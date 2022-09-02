@@ -14,7 +14,7 @@ export default function StockAnalyzerTable() {
 				<RowParameter stockTicker='' paramName='P/E (Price / Earnings)' />
 				<RowParameter stockTicker='' paramName='P/FCF (Price / Free Cash Flow)' />
 				<RowParameter stockTicker='' paramName='Desired Annual Returns %' />
-				{/* <button type='submit'>Submit</button> */}
+				<button type='submit'>Calculate</button>
 			</div>
 		</form>
 	);

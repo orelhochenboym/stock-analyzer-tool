@@ -6,3 +6,7 @@
 	margin-top: 5rem;
 	user-select: none;
 }
+
+input:focus {
+	outline: none;
+}
