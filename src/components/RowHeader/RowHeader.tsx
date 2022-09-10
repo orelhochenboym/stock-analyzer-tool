@@ -4,10 +4,14 @@ import HeaderStockSearch from 'components/HeaderStockSearch/HeaderStockSearch';
 import React from 'react';
 import './RowHeader.scss';
 
-export default function RowHeader() {
+type Props = {
+	stockTicker: string;
+};
+
+export default function RowHeader(props: Props) {
 	return (
 		<div id='row-header-container'>
-			<HeaderStockSearch />
+			<HeaderStockSearch stockTicker={props.stockTicker} />
 			<HeaderHistorical />
 			<HeaderMyAssumptions />
 		</div>

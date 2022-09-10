@@ -15,7 +15,11 @@ export default function ParameterInputElement(props: Props) {
 		setAssumption(parseFloat(e.target.value));
 	}
 
-	return (
+	return props.paramType === 'pe' || props.paramType === 'pfcf' ? (
+		<div className='input-container'>
+			<input type='text' style={{ padding: '0.35rem' }} onChange={onAssumptionChange} name={props.paramType + '-' + props.assumptionType} id='input-box' required />
+		</div>
+	) : (
 		<div className='input-container'>
 			<input type='text' onChange={onAssumptionChange} name={props.paramType + '-' + props.assumptionType} id='input-box' required />
 			<i className='percent'>%</i>

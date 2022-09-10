@@ -1,12 +1,19 @@
 import 'assets/global.scss';
 import StockAnalyzerTool from 'components/StockAnalyzerTool/StockAnalyzerTool';
 import React from 'react';
+import { Navigate, Route, Routes, useParams } from 'react-router-dom';
+import Home from 'routes/Home/Home';
 
-function App() {
+export default function App() {
+	let params = useParams();
 	return (
-		<StockAnalyzerTool />
-		// <div>Hello World!</div>
+		<div className='App'>
+			<Routes>
+				<Route path='calculate' element={<Home stockTicker={params.stockTicker!} />}>
+					<Route path=':stockTicker' element={<StockAnalyzerTool />}></Route>
+				</Route>
+				<Route path='*' element={<Navigate to={'calculate'} />} />
+			</Routes>
+		</div>
 	);
 }
-
-export default App;
