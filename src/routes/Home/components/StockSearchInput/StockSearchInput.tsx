@@ -8,12 +8,12 @@ type Props = {
 
 export default function StockSearchInput(props: Props) {
 	function handleChange(e: ChangeEvent<HTMLInputElement>) {
-		props.onStockChange(e.target.value);
+		props.onStockChange(e.target.value.toUpperCase());
 	}
 
 	return (
 		<>
-			<input type='text' id='stock-search-input' placeholder='Enter a stock ticker here...' value={props.stockTicker} onChange={handleChange} />
+			<input type='text' id='stock-search-input' placeholder='Enter a stock ticker here...' autoComplete='off' value={props.stockTicker} onChange={handleChange} />
 		</>
 	);
 }

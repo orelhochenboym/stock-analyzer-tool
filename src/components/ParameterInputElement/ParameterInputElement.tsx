@@ -17,11 +17,11 @@ export default function ParameterInputElement(props: Props) {
 
 	return props.paramType === 'pe' || props.paramType === 'pfcf' ? (
 		<div className='input-container'>
-			<input type='text' style={{ padding: '0.35rem' }} onChange={onAssumptionChange} name={props.paramType + '-' + props.assumptionType} id='input-box' required />
+			<input type='text' style={{ padding: '0.35rem' }} onChange={onAssumptionChange} name={props.paramType + '-' + props.assumptionType} id='input-box' autoComplete='off' required />
 		</div>
 	) : (
 		<div className='input-container'>
-			<input type='text' onChange={onAssumptionChange} name={props.paramType + '-' + props.assumptionType} id='input-box' required />
+			<input type='text' onChange={onAssumptionChange} name={props.paramType + '-' + props.assumptionType} id='input-box' autoComplete='off' required />
 			<i className='percent'>%</i>
 		</div>
 	);

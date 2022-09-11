@@ -5,29 +5,30 @@ import { useParams } from 'react-router-dom';
 import './StockAnalyzerTool.scss';
 
 export default function StockAnalyzerTable() {
-	let params = useParams();
-	const [stockData, setStockData] = useState({ stockTicker: '', rg: '', npm: '', fcfm: '', sb: '' });
+	let { stockTicker } = useParams();
+	const [data, setData] = useState({ rg: {}, npm: {}, fcfm: {}, sb: {} });
 
-	const getStockData = async () => {
-		const res = await fetch('http://192.168.1.187:8080/api/AAPL').then((response) => response.json());
-		setStockData(res);
+	const fetchHistoricalData = async () => {
+		await fetch(`http://localhost:8080/api/data/${stockTicker}`)
+			.then((response) => response.json())
+			.then((results) => setData(results));
 	};
 
 	useEffect(() => {
-		getStockData();
+		fetchHistoricalData();
 	}, []);
 
 	return (
 		<form action='' method='get'>
 			<div id='stock-analyzer-tool-container'>
-				<RowHeader stockTicker={params.stockTicker!} />
-				<RowParameter stockData={stockData.rg} stockTicker={params.stockTicker!} paramName='Revenue Growth %' />
-				<RowParameter stockData={stockData.npm} stockTicker={params.stockTicker!} paramName='Net Profit Margin %' />
-				<RowParameter stockData={stockData.fcfm} stockTicker={params.stockTicker!} paramName='Free Cash Flow Margin %' />
-				<RowParameter stockData={stockData.sb} stockTicker={params.stockTicker!} paramName='Share Buybacks %' />
-				<RowParameter stockData={'N/A'} stockTicker={params.stockTicker!} paramName='P/E (Price / Earnings)' />
-				<RowParameter stockData={'N/A'} stockTicker={params.stockTicker!} paramName='P/FCF (Price / Free Cash Flow)' />
-				<RowParameter stockData={'N/A'} stockTicker={params.stockTicker!} paramName='Desired Annual Returns %' />
+				<RowHeader stockTicker={stockTicker!} />
+				<RowParameter stockData={data['rg']} stockTicker={stockTicker!} paramName='Revenue Growth %' />
+				<RowParameter stockData={data['npm']} stockTicker={stockTicker!} paramName='Net Profit Margin %' />
+				<RowParameter stockData={data['fcfm']} stockTicker={stockTicker!} paramName='Free Cash Flow Margin %' />
+				<RowParameter stockData={data['sb']} stockTicker={stockTicker!} paramName='Share Buybacks %' />
+				<RowParameter stockData={'N/A'} stockTicker={stockTicker!} paramName='P/E (Price / Earnings)' />
+				<RowParameter stockData={'N/A'} stockTicker={stockTicker!} paramName='P/FCF (Price / Free Cash Flow)' />
+				<RowParameter stockData={'N/A'} stockTicker={stockTicker!} paramName='Desired Annual Returns %' />
 				<div id='calculate-btn-container'>
 					<button id='calculate-btn' type='submit'>
 						Calculate
